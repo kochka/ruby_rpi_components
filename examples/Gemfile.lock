@@ -1,0 +1,23 @@
+PATH
+  remote: ../
+  specs:
+    rpi_components (0.1.0)
+      i2c-devices (~> 0.0.6)
+      rpi_gpio (~> 0.3.2)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    colorize (0.8.1)
+    i2c-devices (0.0.6)
+    rpi_gpio (0.3.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  colorize
+  rpi_components!
+
+BUNDLED WITH
+   1.13.6
