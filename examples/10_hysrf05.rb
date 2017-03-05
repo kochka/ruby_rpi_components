@@ -28,8 +28,8 @@ end
 lcd.message 'Distance :'
 
 loop do
-  measure = distance_sensor.measure
+  measure = distance_sensor.accurate_measure
   next if measure.nil?
-  lcd.message "#{'%.2f' % distance_sensor.measure} cm", 2
+  lcd.message "#{'%.2f' % measure} cm", 2
   sleep 1
 end

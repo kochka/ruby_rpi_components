@@ -2,8 +2,6 @@ module RpiComponents
 
   class Hysrf05
 
-    attr_reader :temperature
-
     def initialize(gpio_trigger, gpio_echo)
       @gpios = { trigger: gpio_trigger, echo: gpio_echo }
       @lock  = false
@@ -28,8 +26,9 @@ module RpiComponents
 
         {} while RPi::GPIO.low?(@gpios[:echo])
         start = Time.now
-        stop  = Time.now while RPi::GPIO.high?(@gpios[:echo])
-        
+        {} while RPi::GPIO.high?(@gpios[:echo])
+        stop  = Time.now
+
         (stop - start) * 34039 / 2
       end
     rescue
@@ -40,7 +39,7 @@ module RpiComponents
 
     # Take 7 measures, remove 2 max and min, and return the average of the 3 remaining measures
     def accurate_measure
-      Array.new(7){ self.measure }.sort.slice(2..4).reduce(:+) / 3
+      Array.new(7){ sleep(50e-3); self.measure }.sort.slice(2..4).reduce(:+) / 3
     end
 
   end
