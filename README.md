@@ -10,6 +10,7 @@ Currently available components are :
  * Rotary encoder
  * Shift register
  * BME280 & BMP280 (temperature, humidity and atmospheric pressure sensor)
+ * HY-SRF05 & HY-SRF04 (Ultrasonic sensor)
 
 
 ### Some quick examples

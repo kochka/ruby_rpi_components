@@ -4,6 +4,7 @@ require 'i2c'
 %w(
   bme280
   button
+  hysrf05
   lcd_i2c
   lcd
   led
