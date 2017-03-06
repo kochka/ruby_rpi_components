@@ -51,7 +51,7 @@ Display distance from an object using a HY-SRF05 ultrasonic distance sensor :
 
 ```ruby
 distance_sensor = RpiComponents::Hysrf05.new(29, 31)
-puts "Distance: "#{'%.2f' % distance_sensor.accurate_measure} cm"
+puts "Distance: #{'%.2f' % distance_sensor.accurate_measure} cm"
 ```
 
 
